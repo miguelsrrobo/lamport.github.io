@@ -31,43 +31,41 @@ Algoritmo:
 * [IR2]: Cj = max(Cj, tm + d) [Se houver mais processos, então tm = valor de Ci(a), Cj = valor máximo entre Cj e tm + d]
 
 **Por exemplo:**
-
-
 <p align = "center">
   <img src="https://github.com/miguelsrrobo/lamport.github.io/blob/main/lamportlogicalclkgfg.png" alt="Rinha logo" width="90%" />
 </p>
 
-    Considere o valor inicial como 1, pois é o primeiro evento e não há valor de entrada no ponto inicial:
+Considere o valor inicial como 1, pois é o primeiro evento e não há valor de entrada no ponto inicial:
 
-        e11 = 1
+e11 = 1
 
-        e21 = 1
+e21 = 1
 
-    O valor do próximo ponto continuará aumentando em d (d = 1), se não houver nenhum valor de entrada, ou seja, seguir [IR1].
+O valor do próximo ponto continuará aumentando em d (d = 1), se não houver nenhum valor de entrada, ou seja, seguir [IR1].
 
-        e12 = e11 + d = 1 + 1 = 2
+e12 = e11 + d = 1 + 1 = 2
 
-        e13 = e12 + d = 2 + 1 = 3
+e13 = e12 + d = 2 + 1 = 3
 
-        e14 = e13 + d = 3 + 1 = 4
+e14 = e13 + d = 3 + 1 = 4
 
-        e15 = e14 + d = 4 + 1 = 5
+e15 = e14 + d = 4 + 1 = 5
 
-        e16 = e15 + d = 5 + 1 = 6
+e16 = e15 + d = 5 + 1 = 6
 
-        e22 = e21 + d = 1 + 1 = 2
+e22 = e21 + d = 1 + 1 = 2
 
-        e24 = e23 + d = 3 + 1 = 4
+e24 = e23 + d = 3 + 1 = 4
 
-        e26 = e25 + d = 6 + 1 = 7
+e26 = e25 + d = 6 + 1 = 7
 
-    Quando houver um valor de entrada, siga [IR2], ou seja, pegue o valor máximo entre Cj e Tm + d.
+Quando houver um valor de entrada, siga [IR2], ou seja, pegue o valor máximo entre Cj e Tm + d.
 
-        e17 = max(7, 5) = 7, [e16 + d = 6 + 1 = 7, e24 + d = 4 + 1 = 5, máximo entre 7 e 5 é 7]
+e17 = max(7, 5) = 7, [e16 + d = 6 + 1 = 7, e24 + d = 4 + 1 = 5, máximo entre 7 e 5 é 7]
 
-        e23 = max(3, 3) = 3, [e22 + d = 2 + 1 = 3, e12 + d = 2 + 1 = 3, máximo entre 3 e 3 é 3]
+e23 = max(3, 3) = 3, [e22 + d = 2 + 1 = 3, e12 + d = 2 + 1 = 3, máximo entre 3 e 3 é 3]
 
-        e25 = max(5, 6) = 6, [e24 + 1 = 4 + 1 = 5, e15 + d = 5 + 1 = 6, máximo entre 5 e 6 é 6]
+e25 = max(5, 6) = 6, [e24 + 1 = 4 + 1 = 5, e15 + d = 5 + 1 = 6, máximo entre 5 e 6 é 6]
 
 **Limitação:**
 
@@ -83,15 +81,24 @@ Sure, here is the translation of the text to Portuguese:
 Saída
 
         e21    e22    e23
- e11    0    0    0    
- e12    0    0    1    
- e13    0    0    0    
- e14    0    0    0    
- e15    0    -1    0    
+        
+ e11    0      0       0 
+ 
+ e12    0      0       1 
+ 
+ e13    0      0       0  
+ 
+ e14    0      0       0 
+ 
+ e15    0      -1      0    
+ 
 Os timestamps dos eventos em P1:
 1 2 3 4 5 
+
 Os timestamps dos eventos em P2:
 1 2 3 
+
+
 
 Complexidade de tempo: O(e1 * e2 * (e1 + e2))
 Espaço auxiliar: O(e1 + e2)
