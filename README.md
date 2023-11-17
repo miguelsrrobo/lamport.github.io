@@ -69,6 +69,7 @@ Algoritmo:
 * No caso de [IR2], se a -> b, então C(a) < C(b) -> Pode ser verdadeiro ou não ser verdadeiro.
 Sure, here is the translation of the text to Portuguese:
 
+ [Recriando o jogo da cobrinha com JavaScript]([https://web.dio.me/project/recriando-o-jogo-da-cobrinha-com-javascript/learning/bfcd37b9-4ccf-40fb-b0ea-c2d865414a19?back=/track/html-web-developer&tab=undefined&moduleId=undefined](https://media.geeksforgeeks.org/wp-content/uploads/20210105123302/lamportlogicalclkgfg.png)) 
 
 Saída
 
