@@ -1,3 +1,5 @@
+**Relógio Lógico de Lamport**
+
 O Relógio Lógico de Lamport foi criado por Leslie Lamport. É um procedimento para determinar a ordem dos eventos que ocorrem. Ele fornece uma base para o Algoritmo de Relógio Vetorial mais avançado. Devido à ausência de um Relógio Global em um Sistema Operacional Distribuído, o Relógio Lógico de Lamport é necessário.
 
 Algoritmo:
@@ -29,6 +31,11 @@ Algoritmo:
 * [IR2]: Cj = max(Cj, tm + d) [Se houver mais processos, então tm = valor de Ci(a), Cj = valor máximo entre Cj e tm + d]
 
 **Por exemplo:**
+
+
+<p align = "center">
+  <img src="https://github.com/miguelsrrobo/lamport.github.io/blob/main/lamportlogicalclkgfg.png" alt="Rinha logo" width="90%" />
+</p>
 
     Considere o valor inicial como 1, pois é o primeiro evento e não há valor de entrada no ponto inicial:
 
@@ -69,7 +76,9 @@ Algoritmo:
 * No caso de [IR2], se a -> b, então C(a) < C(b) -> Pode ser verdadeiro ou não ser verdadeiro.
 Sure, here is the translation of the text to Portuguese:
 
- [Recriando o jogo da cobrinha com JavaScript]([https://web.dio.me/project/recriando-o-jogo-da-cobrinha-com-javascript/learning/bfcd37b9-4ccf-40fb-b0ea-c2d865414a19?back=/track/html-web-developer&tab=undefined&moduleId=undefined](https://media.geeksforgeeks.org/wp-content/uploads/20210105123302/lamportlogicalclkgfg.png)) 
+<p align = "center">
+  <img src="https://raw.githubusercontent.com/miguelsrrobo/lamport.github.io/main/lamportclklimitationgfg.png" alt="Rinha logo" width="50%" />
+</p>
 
 Saída
 
@@ -94,3 +103,6 @@ Pronto para mergulhar de cabeça? Explore nosso conteúdo de demonstração grat
 * No caso de [IR1], se a -> b, então C(a) < C(b) -> verdadeiro.
 
 * No caso de [IR2], se a -> b, então C(a) < C(b) -> Pode ser verdadeiro ou não ser verdadeiro.
+
+**Site onde foi tirado toda as informações:**
+[![geeksforgeeks Lamport’s logical clock](.github/live.png)](https://www.geeksforgeeks.org/lamports-logical-clock/)
