@@ -1,0 +1,23 @@
+#resultado {
+  border: 1px solid black;
+  padding: 10px;
+  font-family: Arial;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.math-inline {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0 5px;
+  background-color: #f2f2f2;
+}

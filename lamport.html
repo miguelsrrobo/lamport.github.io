@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>Numero de cervidores</p>
+    <input type="text" id="e1" placeholder="Enter e1">
+    <p>Numero de estados</p>
+    <input type="text" id="e2" placeholder="Enter e2">
+    <p>Numero de processo</p>
+    <input type="text" id="pp" placeholder="Processo P">
+    <button onclick="confirmarNome()">Confirmar</button>
+
+    <p>Resultado</p>
+    <div id="resultado"></div>
+</body>
+
+<script type="text/javascript">
+    function confirmarNome() {
+        document.getElementById("resultado").value = "";
+
+        // Get the values of e1 and e2 from the input elements
+        let e1Value = parseInt(document.getElementById("e1").value);
+        let e2Value = parseInt(document.getElementById("e2").value);
+        let numeroDeprocessos = parseInt(document.getElementById("pp").value);
+        // Check if both e1 and e2 values are valid integers
+        if (!isNaN(e1Value) && !isNaN(e2Value) && e1Value > 0 && e2Value > 0 && numeroDeprocessos > 0) {
+            // Call the lamportLogicalClock function with the provided e1 and e2 values
+            lamportLogicalClock(e1Value, e2Value, numeroDeprocessos);
+        } else {
+            // Display an error message if e1 and e2 values are invalid
+            document.getElementById("resultado").innerHTML = "Please enter valid values for e1 and e2";
+        }
+        document.getElementById("e1").value = "";
+        document.getElementById("e2").value = "";
+        document.getElementById("pp").value = "";
+
+    }
+
+    // Function to display the logical timestamp
+    const display = (e1, e2, p1, p2) => {
+        let i;
+
+        document.getElementById("resultado").innerHTML += `<br/>_-_-_-_-_-_-_-_-_ <br/>`
+
+        document.getElementById("resultado").innerHTML += `<br/>The time stamps of events in P1:<br/>`;
+ 
+        for (i = 0; i < e1; i++) {
+            document.getElementById("resultado").innerHTML += `_${p1[i]}`;
+        }
+ 
+        document.getElementById("resultado").innerHTML += `<br/>The time stamps of events in P2:<br/>`;
+ 
+        // Print the array p2[]
+        for (i = 0; i < e2; i++){
+            document.getElementById("resultado").innerHTML +=`_${p2[i]}`;
+        }
+    }
+
+
+    // Function to find the timestamp of events
+    const lamportLogicalClock = (e1, e2, numeroDeprocessos) => {
+        let i, j, k, p1 = [], p2 = [];
+
+        // Initialize p1[] and p2[]
+        for (i = 0; i < e1; i++) {
+            p1[i] = i + 1;
+        }
+
+        for (i = 0; i < e2; i++) {
+            p2[i] = i + 1;
+        }
+
+        for (let index = 0; index < numeroDeprocessos; index++) {
+
+            document.getElementById("resultado").innerHTML += `<br/>_-_-_-_-_-_-_-_-_`
+            document.getElementById("resultado").innerHTML += `<br/>_`
+            for (i = 0; i < e2; i++) {
+                document.getElementById("resultado").innerHTML += `\te2${i + 1}`
+            }
+            for (i = 0; i < e1; i++) {
+                document.getElementById("resultado").innerHTML += `<br/>e1${i + 1}: `;
+
+                for (j = 0; j < e2; j++) {
+                    let messageValue = p1[i] + p2[j];
+
+                    if (messageValue === 2) {
+                        messageValue = 1; // Message is sent
+                    } else if (messageValue === 0) {
+                        messageValue = -1; // Message is received
+                    } else {
+                        messageValue = 0; // No message is sent or received
+                    }
+
+                    document.getElementById("resultado").innerHTML += `_${messageValue}\t`;
+                }
+            }
+
+            for (i = 0; i < e1; i++) {
+                for (j = 0; j < e2; j++) {
+                    let messageValue = p1[i] + p2[j];
+
+                    if (messageValue === 2) {
+                        messageValue = 1; // Message is sent
+                    } else if (messageValue === 0) {
+                        messageValue = -1; // Message is received
+                    }
+                }
+            }
+            document.getElementById("resultado").innerHTML += "\n";
+        }
+
+        display(e1, e2, p1, p2);
+    }
+</script>
+</html>
