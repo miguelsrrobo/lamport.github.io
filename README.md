@@ -1,3 +1,5 @@
+todo o texo aqui presente foi traduzi e tirado deste site [![geeksforgeeks Lamport’s logical clock](.github/live.png)](https://www.geeksforgeeks.org/lamports-logical-clock/), para fins de estudo encima do relogio de lamport
+
 **Relógio Lógico de Lamport**
 
 O Relógio Lógico de Lamport foi criado por Leslie Lamport. É um procedimento para determinar a ordem dos eventos que ocorrem. Ele fornece uma base para o Algoritmo de Relógio Vetorial mais avançado. Devido à ausência de um Relógio Global em um Sistema Operacional Distribuído, o Relógio Lógico de Lamport é necessário.
@@ -111,5 +113,5 @@ Pronto para mergulhar de cabeça? Explore nosso conteúdo de demonstração grat
 
 * No caso de [IR2], se a -> b, então C(a) < C(b) -> Pode ser verdadeiro ou não ser verdadeiro.
 
-**Site onde foi tirado toda as informações:**
+**Site original**
 [![geeksforgeeks Lamport’s logical clock](.github/live.png)](https://www.geeksforgeeks.org/lamports-logical-clock/)
