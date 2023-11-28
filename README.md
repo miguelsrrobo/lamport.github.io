@@ -1,5 +1,3 @@
-
-
 **Relógio Lógico de Lamport**
 
 O Relógio Lógico de Lamport foi criado por Leslie Lamport. É um procedimento para determinar a ordem dos eventos que ocorrem. Ele fornece uma base para o Algoritmo de Relógio Vetorial mais avançado. Devido à ausência de um Relógio Global em um Sistema Operacional Distribuído, o Relógio Lógico de Lamport é necessário.
