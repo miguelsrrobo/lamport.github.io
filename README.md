@@ -1,4 +1,4 @@
-todo o texo aqui presente foi traduzi e tirado deste site [![geeksforgeeks Lamport’s logical clock](.github/live.png)](https://www.geeksforgeeks.org/lamports-logical-clock/), para fins de estudo encima do relogio de lamport
+
 
 **Relógio Lógico de Lamport**
 
@@ -105,13 +105,9 @@ Os timestamps dos eventos em P2:
 Complexidade de tempo: O(e1 * e2 * (e1 + e2))
 Espaço auxiliar: O(e1 + e2)
 
-Sente-se perdido no mundo de tópicos DSA aleatórios, perdendo tempo sem progresso? É hora de mudar! Junte-se ao nosso curso DSA, onde o guiaremos em uma jornada emocionante para dominar o DSA de forma eficiente e dentro do cronograma.
-Pronto para mergulhar de cabeça? Explore nosso conteúdo de demonstração gratuito e participe do nosso curso DSA, com a confiança de mais de 100.000 geeks!
-
-
 * No caso de [IR1], se a -> b, então C(a) < C(b) -> verdadeiro.
 
 * No caso de [IR2], se a -> b, então C(a) < C(b) -> Pode ser verdadeiro ou não ser verdadeiro.
 
 **Site original**
-[![geeksforgeeks Lamport’s logical clock](.github/live.png)](https://www.geeksforgeeks.org/lamports-logical-clock/)
+texto original se encontra aqui[![geeksforgeeks Lamport’s logical clock](.github/live.png)](https://www.geeksforgeeks.org/lamports-logical-clock/)
